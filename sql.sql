@@ -87,11 +87,11 @@ CREATE TABLE user_last_recipe (
   FOREIGN KEY (recipe_id) REFERENCES recipes(id) ON DELETE CASCADE
 );
 
--- Insertar continentes ejemplo
+-- Insertar continentes
 INSERT INTO continents (name) VALUES 
 ('Africa'), ('Asia'), ('Europe'), ('North America'), ('South America'), ('Oceania');
 
--- Insertar países ejemplo (uno por continente)
+-- Insertar países
 INSERT INTO countries (continent_id, name) VALUES
 (1, 'Nigeria'),
 (2, 'China'),
@@ -100,7 +100,7 @@ INSERT INTO countries (continent_id, name) VALUES
 (5, 'Brazil'),
 (6, 'Australia');
 
--- Insertar recetas ejemplo (una por país)
+-- Insertar recetas
 INSERT INTO recipes (country_id, title, description, ingredients, steps, image_url) VALUES
 (1, 'Jollof Rice', 'Traditional West African rice dish.', 'Rice, Tomatoes, Onion, Pepper, Spices', '1. Wash rice\n2. Prepare sauce\n3. Cook rice with sauce', 'images/jollof.jpg'),
 (2, 'Kung Pao Chicken', 'Spicy stir-fried chicken with peanuts.', 'Chicken, Peanuts, Chili, Soy sauce', '1. Marinate chicken\n2. Stir-fry ingredients\n3. Serve hot', 'images/kungpao.jpg'),
@@ -109,7 +109,7 @@ INSERT INTO recipes (country_id, title, description, ingredients, steps, image_u
 (5, 'Feijoada', 'Brazilian black bean stew.', 'Black beans, Pork, Sausage, Rice', '1. Cook beans\n2. Add meats\n3. Serve with rice', 'images/feijoada.jpg'),
 (6, 'Meat Pie', 'Australian savory pie.', 'Pastry, Beef, Gravy, Vegetables', '1. Prepare filling\n2. Bake pie\n3. Serve hot', 'images/meatpie.jpg');
 
--- Insertar curiosidades ejemplo
+-- Insertar curiosidades 
 INSERT INTO curiosities (country_id, content) VALUES
 (1, 'Nigeria is the most populous country in Africa.'),
 (2, 'China has the world\'s largest population.'),
