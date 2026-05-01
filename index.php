@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require_once 'config.php';
 // Datos del usuario
 $user_id = $_SESSION['user_id'] ?? null;
 $username = $_SESSION['username'] ?? null;
