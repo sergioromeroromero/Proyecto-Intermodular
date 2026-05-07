@@ -29,6 +29,7 @@ $recipe = $stmt->fetch();
 <meta charset="UTF-8" />
 <title>Recetas de <?=htmlspecialchars($location['country_name'])?></title>
 <link rel="stylesheet" href="style.css" />
+<script src="nav.js" defer></script>
 </head>
 <body>
 <header>

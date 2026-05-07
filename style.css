@@ -1,76 +1,164 @@
+:root {
+    --primary: #2c3e50;
+    --accent:  #2980b9;
+    --bg:      #f4f4f4;
+    --border:  #ddd;
+    --radius:  4px;
+}
+ 
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ 
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background: #f9f9f9;
+    font-family: system-ui, Arial, sans-serif;
+    background: var(--bg);
     color: #333;
+    line-height: 1.6;
 }
-
-h1, h2, h3 {
-    color: #2c3e50;
-}
-
+ 
 a {
-    color: #2980b9;
+    color: var(--accent);
     text-decoration: none;
 }
-
-a:hover {
-    text-decoration: underline;
+a:hover { text-decoration: underline; }
+ 
+/* Header */
+header {
+    background: var(--primary);
+    color: white;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-
-nav {
-    margin-bottom: 20px;
+header h1 { font-size: 1.4rem; }
+nav a    { color: #aed6f1; margin-left: 12px; }
+nav a:hover { color: white; text-decoration: none; }
+nav span { color: var(--border); }
+ 
+/* Card */
+section {
+    background: white;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 24px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
-
+ 
+h2, h3 { color: var(--primary); margin-bottom: 12px; }
+ul { padding-left: 20px; }
+li { margin: 4px 0; }
+ 
+/* Errors */
 .errors {
     background: #f8d7da;
     color: #721c24;
     border: 1px solid #f5c6cb;
     padding: 10px;
-    margin-bottom: 15px;
+    border-radius: var(--radius);
+    margin-bottom: 16px;
 }
-
+ 
+/* Forms */
 form label {
     display: block;
-    margin: 10px 0 5px;
+    margin: 10px 0 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
 }
-
+ 
 form input[type="text"],
 form input[type="password"],
 form textarea {
     width: 100%;
     max-width: 400px;
-    padding: 8px;
-    box-sizing: border-box;
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font: inherit;
 }
-
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(41,128,185,0.15);
+}
+ 
 form button {
-    margin-top: 10px;
-    padding: 8px 15px;
-    background: #2980b9;
+    margin-top: 12px;
+    padding: 8px 18px;
+    background: var(--accent);
     color: white;
     border: none;
+    border-radius: var(--radius);
     cursor: pointer;
+    font: inherit;
 }
-
-form button:hover {
-    background: #3498db;
-}
-
+form button:hover { background: #3498db; }
+ 
+/* Comments */
 .comment {
-    background: white;
-    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    padding: 12px;
     margin-bottom: 10px;
-    border-radius: 4px;
+    border-radius: var(--radius);
 }
-
 .comment button {
-    margin-right: 5px;
+    padding: 4px 10px;
+    margin-right: 6px;
+    border: none;
+    border-radius: var(--radius);
+    background: var(--border);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.85rem;
 }
-
+.comment button:hover { background: #bbb; }
+ 
+/* Code */
 pre {
-    background: #eee;
-    padding: 10px;
+    background: #f0f0f0;
+    padding: 12px;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
     white-space: pre-wrap;
-    border-radius: 4px;
+    overflow-x: auto;
+}
+ 
+/* Recipe layout */
+.recipe {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    margin-top: 12px;
+}
+ 
+.recipe-image {
+    width: 260px;
+    min-width: 260px;
+}
+ 
+.recipe-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+ 
+.recipe-info {
+    flex: 1;
+}
+ 
+.recipe-info h3 {
+    margin-top: 16px;
+    margin-bottom: 6px;
+}
+ 
+.recipe-info h3:first-child {
+    margin-top: 0;
 }

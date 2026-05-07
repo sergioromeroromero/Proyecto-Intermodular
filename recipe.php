@@ -90,6 +90,7 @@ $comments = $stmt->fetchAll();
 <meta charset="UTF-8" />
 <title><?=htmlspecialchars($recipe['title'])?> - Recetas</title>
 <link rel="stylesheet" href="style.css" />
+<script src="nav.js" defer></script>
 <script>
     <!-- funciones para toggle de edicion y manejo de likes -->
 function toggleEdit(commentId) {
@@ -141,19 +142,27 @@ function likeComment(commentId) {
 
 <main>
     <h2><?=htmlspecialchars($recipe['title'])?></h2>
-    <?php if ($recipe['image_url']): ?>
-        <img src="<?=htmlspecialchars($recipe['image_url'])?>" alt="<?=htmlspecialchars($recipe['title'])?>" style="max-width:300px;">
-    <?php endif; ?>
-    <h3>Ingredientes</h3>
-    <pre><?=htmlspecialchars($recipe['ingredients'])?></pre>
-    <h3>Pasos</h3>
-    <pre><?=htmlspecialchars($recipe['steps'])?></pre>
-
+ 
+    <div class="recipe">
+        <div class="recipe-image">
+            <?php if ($recipe['image_url']): ?>
+                <img src="<?=htmlspecialchars($recipe['image_url'])?>" alt="<?=htmlspecialchars($recipe['title'])?>">
+            <?php endif; ?>
+        </div>
+ 
+        <div class="recipe-info">
+            <h3>Ingredientes</h3>
+            <pre><?=htmlspecialchars($recipe['ingredients'])?></pre>
+            <h3>Pasos</h3>
+            <pre><?=htmlspecialchars($recipe['steps'])?></pre>
+        </div>
+    </div>
+ 
     <section>
         <h3>Curiosidad</h3>
         <p><?=htmlspecialchars($curiosity)?></p>
     </section>
-
+    
     <section>
         <h3>Comentarios</h3>
         <?php if ($errors): ?>

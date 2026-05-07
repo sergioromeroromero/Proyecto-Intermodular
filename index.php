@@ -29,6 +29,7 @@ if ($user_id) {
 <meta charset="UTF-8" />
 <title>Inicio - Recetas</title>
 <link rel="stylesheet" href="style.css" />
+<script src="nav.js" defer></script>
 </head>
 <body>
 <header>

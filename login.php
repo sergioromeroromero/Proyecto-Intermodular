@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <meta charset="UTF-8" />
 <title>Login - Recetas</title>
 <link rel="stylesheet" href="style.css" />
+<script src="nav.js" defer></script>
 </head>
 <body>
 <h2>Iniciar sesión</h2>
