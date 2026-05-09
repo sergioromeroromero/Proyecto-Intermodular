@@ -1,10 +1,10 @@
 <?php
 session_start();
 // Configuracion para conectar a la base de datos MySQL en InfinityFree
-$host = 'localhost';
-$db   = 'recetas_db';
-$user = 'root';
-$pass = '';
+$host = 'sql312.infinityfree.com';
+$db   = 'if0_41874579_recetas_db';
+$user = 'if0_41874579';
+$pass = 'TdWKPf932rRFus';
 $charset = 'utf8mb4';
 // Configuracion para conexion local (XAMPP)
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
